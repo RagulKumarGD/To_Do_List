@@ -1,59 +1,89 @@
-*{
-  background-color: skyblue;
-}
-.App{
-  position:relative;
-  top: 200px;
-  left: 40%;
-  border: 1px solid black;
-  background-color: skyblue;
-  border-radius: 25px;
-  max-width: 40vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.Container h1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.todo-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.inputt{
-  background-color: white;
-  margin: 2px;
-  border-radius: 25px;
-  padding: 5px;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
-}
-.inputtbtn{
-  background-color: white;
-  border: 1px solid black;
-  margin: 2px;
-  border-radius: 25px;
-  padding: 5px;
-}
-.inputtbtn:hover{
-  color: black;
-  border: 1px solid black;
-  font-size: large;
-  font-family: 'Courier New', Courier, monospace;
+.todo-header {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.8em;
 }
 
-.List{
+.todo-input-container {
   display: flex;
   justify-content: space-between;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
-}
-.list-btn{
-  padding-top: 18px;
-  border-color: black;
-  color: rgb(28, 0, 244);
+  margin-bottom: 20px;
 }
 
-.list-btn:hover{
-  padding-top: 17px;
-  color: red
+.todo-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-right: 10px;
+}
+
+.todo-add-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.todo-add-btn:hover {
+  background-color: #0056b3;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  background-color: #fff;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.todo-task {
+  margin: 0;
+  flex-grow: 1;
+  color: #333;
+}
+
+.todo-delete-icon {
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: transform 0.2s;
+}
+
+.todo-delete-icon:hover {
+  transform: scale(1.1);
 }

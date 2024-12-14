@@ -30,28 +30,39 @@ const Create = () => {
     }
     
   return (
-    <div className='Container'>
-        <h1>TO DO LIST</h1>
-        <div className='Container-in'>
-        <div className='inputs'>
-        <input className='inputt' ref={inpref} id='taskk' type='text' placeholder='Enter Task' onChange={(e)=>setTask(e.target.value)} />
-        <button className='inputtbtn' onClick={handleadd}>ADD</button>
-      </div>
-      <div  >
-        <ul style={{listStyle:'none',backgroundColor:'skyblue'}}>
-            {todos.map(i=>(
-                <li key={i._id}>
-                   <div className='List'>
-                     <input className='list-chc' type='checkbox' onClick={()=>handleedit(i._id)} />
-                     <p >{i.task}</p>
-                     <FaTrash style={{cursor:'pointer'}} onClick={()=>handledelete(i._id)} className='list-btn'/>
-                   </div>
-                </li>
-            ))}
-        </ul>
-      </div>
-        </div>
+    <div className='todo-container'>
+    <h1 className='todo-header'>To-Do List</h1>
+    <div className='todo-input-container'>
+        <input 
+            className='todo-input' 
+            ref={inpref} 
+            value={task} 
+            type='text' 
+            placeholder='Enter a new task...' 
+            onChange={(e) => setTask(e.target.value)}
+        />
+        <button className='todo-add-btn' onClick={handleadd}>Add</button>
     </div>
+
+    <ul className='todo-list'>
+        {todos.map(todo => (
+            <li key={todo._id} className='todo-item'>
+                <div className='todo-item-content'>
+                    <input 
+                        type='checkbox' 
+                        className='todo-checkbox' 
+                        onClick={() => handleedit(todo._id)} 
+                    />
+                    <p className='todo-task'>{todo.task}</p>
+                    <FaTrash 
+                        className='todo-delete-icon' 
+                        onClick={() => handledelete(todo._id)} 
+                    />
+                </div>
+            </li>
+        ))}
+    </ul>
+</div>
   )
 }
 
